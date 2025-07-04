@@ -21,7 +21,7 @@ function ProtectedRoute({ children, onlyUnAuth }: ProtectedRouteProps) {
   }
 
   if (!onlyUnAuth && !user && !token) {
-    return <Navigate replace to='/login' state={{ from: { location } }} />;
+    return <Navigate replace to='/login' state={{ from: location }} />;
   }
 
   if (onlyUnAuth && user) {

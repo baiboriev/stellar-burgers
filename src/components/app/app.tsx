@@ -16,11 +16,18 @@ import { IngredientDetails, Modal, OrderInfo } from '@components';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import ProtectedRoute from '../protected-route/protected-route';
 import { Layout } from '../layout';
+import { useSelector } from '../../services/store';
+import { orderSelectors } from '../../services/slices/order';
 
 const App = () => {
   const location = useLocation();
   const background = location.state?.background;
   const navigate = useNavigate();
+
+  const orderInfo = useSelector(orderSelectors.getOrderByNumber);
+  const orderNumber: string = orderInfo
+    ? `#${String(orderInfo?.number).padStart(6, '0')}`
+    : '';
 
   const handleModalClose = () => {
     if (background) {
@@ -101,7 +108,7 @@ const App = () => {
             <Route
               path='/feed/:number'
               element={
-                <Modal title='Данные заказа' onClose={handleModalClose}>
+                <Modal title={orderNumber} onClose={handleModalClose}>
                   <OrderInfo />
                 </Modal>
               }
@@ -109,7 +116,7 @@ const App = () => {
             <Route
               path='/ingredients/:id'
               element={
-                <Modal title='Данные ингредиента' onClose={handleModalClose}>
+                <Modal title='Детали ингредиента' onClose={handleModalClose}>
                   <IngredientDetails />
                 </Modal>
               }
@@ -118,7 +125,7 @@ const App = () => {
               path='/profile/orders/:number'
               element={
                 <ProtectedRoute>
-                  <Modal title='Данные заказа' onClose={handleModalClose}>
+                  <Modal title={orderNumber} onClose={handleModalClose}>
                     <OrderInfo />
                   </Modal>
                 </ProtectedRoute>

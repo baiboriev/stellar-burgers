@@ -1,10 +1,14 @@
 .content {
-  margin: 0 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 520px;
+  margin: 120px auto;
+}
+
+.modal {
+  margin: 0 60px;
 }
 
 .nutritional_values {
