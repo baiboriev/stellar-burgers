@@ -1,11 +1,13 @@
 .wrap {
-  margin: 0 auto;
+  margin: 120px auto;
   width: 640px;
+}
+.modal {
+  margin: 0 auto;
 }
 .number {
   text-align: center;
 }
-
 .status {
   color: #00cccc;
 }
