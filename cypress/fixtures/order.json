@@ -1,0 +1,19 @@
+{
+    "success": true,
+    "order": {
+      "_id": "test68cfa844673086001ba89095",
+      "ingredients": [
+        "643d69a5c3f7b9001cfa093c",
+        "643d69a5c3f7b9001cfa093e",
+        "643d69a5c3f7b9001cfa0942",
+        "643d69a5c3f7b9001cfa093c"
+      ],
+      "status": "done",
+      "name": "testburger",
+      "createdAt": "2025-09-21T07:24:52.613Z",
+      "updatedAt": "2025-09-21T07:24:53.835Z",
+      "number": 12345,
+      "owner": "testid1234"
+    },
+    "name": "Test заказ"
+}

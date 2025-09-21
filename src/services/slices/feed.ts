@@ -35,7 +35,7 @@ export const feedSlice = createSlice({
       })
       .addCase(getFeedThunk.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error?.message || 'Произошла ошибка';
+        state.error = action.error.message || 'Произошла ошибка';
       })
       .addCase(getFeedThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
