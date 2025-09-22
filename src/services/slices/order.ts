@@ -27,6 +27,7 @@ export const orderSlice = createSlice({
       state.orderData = null;
       state.orderModalData = null;
       state.orderData = null;
+      state.orderName = null;
     }
   },
   extraReducers: (builder) => {
@@ -38,7 +39,7 @@ export const orderSlice = createSlice({
       })
       .addCase(getOrderByNumberThunk.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error?.message || 'Произошла ошибка';
+        state.error = action.error.message || 'Произошла ошибка';
       })
       .addCase(getOrderByNumberThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
@@ -51,7 +52,7 @@ export const orderSlice = createSlice({
       })
       .addCase(sendOrderThunk.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error?.message || 'Произошла ошибка';
+        state.error = action.error.message || 'Произошла ошибка';
       })
       .addCase(sendOrderThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;

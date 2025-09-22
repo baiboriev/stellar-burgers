@@ -7,7 +7,7 @@ import {
   logoutApi,
   getOrdersApi,
   updateUserApi
-} from '@api';
+} from '../../utils/burger-api';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { USER_SLICE_NAME } from '../slices/slicesName';
 import { deleteCookie, setCookie } from '../../utils/cookie';
